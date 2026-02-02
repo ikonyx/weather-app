@@ -1,7 +1,7 @@
 const apiKey = "3LMP8DFDEB9TKDYFNGJA4JK86";
 
 async function getWeather() {
-    const location = document.querySelector('.input').value;
+    const location = document.querySelector('input').value;
     const response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`);
     return response;
 }
@@ -13,7 +13,8 @@ export async function getWeatherData() {
         cloudCover: await getWeatherCloudCover(),
         windSpeed: await getWeatherWindSpeed(),
         UVIndex: await getWeatherUVIndex(),
-        humidity: await getWeatherHumidity()
+        humidity: await getWeatherHumidity(),
+        icon: await getWeatherIcon()
     }
     
     return weatherData;
@@ -61,5 +62,12 @@ async function getWeatherHumidity(response) {
     const weatherData = await response.json();
     const humidity = `${weatherData.currentConditions.humidity}%`
     return humidity;
+}
+
+async function getWeatherIcon(response) {
+    response = await getWeather();
+    const weatherData = await response.json();
+    const weatherIcon = weatherData.currentConditions.icon;
+    return weatherIcon;   
 }
 
