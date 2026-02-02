@@ -6,12 +6,40 @@
     <title>Weatherly</title>
 </head>
 <body>
-    <div class="container">
-        <div class="search-box">
+    <div id="container">
+        <div id="search-box">
             <input class="input" type="text" placeholder="Enter a city or town">
             <button>Submit</button>
         </div>
-        <div class="weather-info"></div>
+        <div id="weather-info">
+            <div id="main-info">
+                <div id="weather-icon"></div>
+                <div id="weather-general-info">
+                    <div id="temperature"></div>
+                    <div id="condition"></div>
+                </div>
+            </div>
+            <div id="secondary-info">
+                <ul>
+                    <li id="cloudcover-wrapper">
+                        <div id="cloudCoverLabel"></div>
+                        <div id="cloudCover"></div>
+                    </li>
+                    <li id="windSpeed-wrapper"> 
+                        <div id="windSpeedLabel"></div>
+                        <div id="windSpeed"></div>
+                    </li>
+                    <li id="humility-wrapper">
+                        <div id="humidityLabel"></div>
+                        <div id="humidity"></div>
+                    </li>
+                    <li id="UVIndex-wrapper">
+                        <div id="UVIndexLabel"></div>
+                        <div id="UVIndex"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
