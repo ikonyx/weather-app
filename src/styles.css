@@ -1,144 +1,142 @@
 @font-face {
-  font-family: 'Merriweather';
-  src: url('./assets/Merriweather.ttf');
+  font-family: "Merriweather";
+  src: url("./assets/Merriweather.ttf");
 }
 
 body {
-    margin: 0;
-    font-family: "Arial, Helvetica", sans-serif;
-    background-color: rgb(70, 41, 124);
-    color: azure;
+  margin: 0;
+  font-family: "Arial, Helvetica", sans-serif;
+  background-color: rgb(70, 41, 124);
+  color: azure;
 }
 
 #container {
-    display: grid;
-    grid-template-rows: 1/ 3;
-    height: 100vh;
+  display: grid;
+  grid-template-rows: 1/ 3;
+  height: 100vh;
 }
 
 header {
-    width:100%;
-    height: 10vh;
-    background-color: rgb(52, 32, 96);
+  width: 100%;
+  height: 10vh;
+  background-color: rgb(52, 32, 96);
 }
 
 #logo {
-    padding: 0.8rem;
-    font-family: Merriweather;
-    font-size: 2.5rem;
-    letter-spacing: 0.1rem;
+  padding: 0.8rem;
+  font-family: Merriweather;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
 }
 
 footer {
-    align-self: end;
-    text-align: center;
-    padding: 0.8rem;
-    background-color: rgb(52, 32, 96);
+  align-self: end;
+  text-align: center;
+  padding: 0.8rem;
+  background-color: rgb(52, 32, 96);
 }
 
 a {
-    color: white;
+  color: white;
 }
 
 #body-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
-
 input {
-    padding: 0.2rem 0.8rem;
-    font-size: 1rem;
-    width: 20rem;
+  padding: 0.2rem 0.8rem;
+  font-size: 1rem;
+  width: 20rem;
 }
 
 input:focus {
-    outline: none;
-    border-color: rgb(164, 73, 249);
-    border-width: 0.2rem;
+  outline: none;
+  border-color: rgb(164, 73, 249);
+  border-width: 0.2rem;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 li {
-    display: flex;
-    gap: 0.3rem;
+  display: flex;
+  gap: 0.3rem;
 }
 
 #temperature {
-    font-size: 5rem;
+  font-size: 5rem;
 }
 
 #condition {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 #weather-info {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: 1/ 3;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2rem;
-    background-color: rgb(52, 32, 96);
-    padding: 4rem;
-    border-radius: 32px;
-    width: 38rem;
-    height: 12rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1/ 3;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2rem;
+  background-color: rgb(52, 32, 96);
+  padding: 4rem;
+  border-radius: 32px;
+  width: 38rem;
+  height: 12rem;
 }
 
 .secondary-info-values {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 800px) {
+  #body-container {
+    margin: 3rem;
+  }
 
-    #body-container {
-        margin: 3rem;
-    }
+  #logo {
+    font-size: 1.5rem;
+  }
 
-    #logo {
-        font-size: 1.5rem;
-    }
+  input {
+    width: 15rem;
+  }
 
-    input {
-        width: 15rem;
-    }
+  #weather-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 13rem;
+    height: 25rem;
+  }
 
-    #weather-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 13rem;
-        height: 25rem;
-    }
+  #temperature {
+    text-align: center;
+  }
 
-    #temperature {
-        text-align: center;
-    }
+  #condition {
+    font-size: 1.1rem;
+    text-align: center;
+  }
 
-    #condition {
-        font-size: 1.1rem;
-        text-align: center;
-    }
+  ul {
+    display: grid;
+    gap: 0.3rem;
+  }
 
-    ul {
-        display: grid;
-        gap: 0.3rem;
-    }
+  li {
+    justify-content: center;
+  }
 
-    li {
-        justify-content: center;
-    }
-
-    img {
-        max-width: 8rem;
-        max-height: 8rem;
-    }
+  img {
+    max-width: 8rem;
+    max-height: 8rem;
+  }
 }
