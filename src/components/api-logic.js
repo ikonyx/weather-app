@@ -5,69 +5,63 @@ async function getWeather() {
   const response = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`,
   );
-  return response;
+  const weatherData = await response.json();
+  return weatherData;
 }
 
 export async function getWeatherData() {
   const weatherData = {
-    temperature: await getWeatherTemperature(),
+    temperature: await geTemperature(),
     condition: await getWeatherConditions(),
-    cloudCover: await getWeatherCloudCover(),
-    windSpeed: await getWeatherWindSpeed(),
-    UVIndex: await getWeatherUVIndex(),
-    humidity: await getWeatherHumidity(),
+    cloudCover: await getCloudCover(),
+    windSpeed: await getWindSpeed(),
+    UVIndex: await getUVIndex(),
+    humidity: await getHumidity(),
     icon: await getWeatherIcon(),
   };
 
   return weatherData;
 }
 
-async function getWeatherTemperature(response) {
-  response = await getWeather();
-  const weatherData = await response.json();
-  const temperatureInFahrenheit = weatherData.currentConditions.temp;
+async function geTemperature(weatherData) {
+  weatherData = await getWeather();
+  const temperatureInFahrenheit = await weatherData.currentConditions.temp;
   const temperatureInCelsius = `${Math.round(((temperatureInFahrenheit - 32) * 5) / 9)}°C`;
   return temperatureInCelsius;
 }
 
-async function getWeatherConditions(response) {
-  response = await getWeather();
-  const weatherData = await response.json();
+async function getWeatherConditions(weatherData) {
+  weatherData = await getWeather();
   const weatherCondition = weatherData.currentConditions.conditions;
   return weatherCondition;
 }
 
-async function getWeatherCloudCover(response) {
-  response = await getWeather();
-  const weatherData = await response.json();
+async function getCloudCover(weatherData) {
+  weatherData = await getWeather();
   const cloudCover = `${weatherData.currentConditions.cloudcover}%`;
   return cloudCover;
 }
 
-async function getWeatherWindSpeed(response) {
-  response = await getWeather();
-  const weatherData = await response.json();
+async function getWindSpeed(weatherData) {
+  weatherData = await getWeather();
   const windSpeed = `${weatherData.currentConditions.windspeed} km/h`;
   return windSpeed;
 }
 
-async function getWeatherUVIndex(response) {
-  response = await getWeather();
-  const weatherData = await response.json();
+async function getUVIndex(weatherData) {
+  weatherData = await getWeather();
   const UvIndex = weatherData.currentConditions.uvindex;
   return UvIndex;
 }
 
-async function getWeatherHumidity(response) {
-  response = await getWeather();
-  const weatherData = await response.json();
+async function getHumidity(weatherData) {
+  weatherData = await getWeather();
   const humidity = `${weatherData.currentConditions.humidity}%`;
   return humidity;
 }
 
-async function getWeatherIcon(response) {
-  response = await getWeather();
-  const weatherData = await response.json();
+async function getWeatherIcon(weatherData) {
+  weatherData = await getWeather();
   const weatherIcon = weatherData.currentConditions.icon;
   return weatherIcon;
 }
